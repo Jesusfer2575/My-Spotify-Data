@@ -1,11 +1,10 @@
-import React, { useState, FormEvent, useContext, useEffect } from 'react';
-import { UserPreferencesContext } from '../../store/userPreferences/useUserPreferenceContext';
-import { ACTIONS } from '../../store/userPreferences/userPreferencesActions';
+import React, { useState, FormEvent, useEffect } from 'react';
+import useUserPreferenceContext from '../../store/userPreferences/useUserPreferenceContext';
 import { IGenre } from '../genres/genres.interface';
 import { _getToken, _getGenres } from '../../controllers/spotify-api';
 
 const Genres: React.FC = () => {
-  const { dispatch } = useContext(UserPreferencesContext);
+  const { addGenreId } = useUserPreferenceContext();
   const [genreId, setGenreId] = useState('');
   const [genresList, setGenresList] = useState<IGenre[]>([
     {
@@ -34,10 +33,7 @@ const Genres: React.FC = () => {
 
   const handleChange = (e: FormEvent<HTMLSelectElement>) => {
     setGenreId(e.currentTarget.value);
-    dispatch({
-      type: ACTIONS.ADD_GENRE_ID,
-      payload: e.currentTarget.value,
-    });
+    addGenreId(e.currentTarget.value);
   };
 
   return (

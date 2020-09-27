@@ -24,7 +24,7 @@ export const _getMyUserId = async (token: string) => {
 
   const data = await result.json();
   return data;
-}
+};
 
 export const _getMyPlaylists = async (token: string, userId: string) => {
   const limit = '5';
@@ -35,7 +35,7 @@ export const _getMyPlaylists = async (token: string, userId: string) => {
 
   const data = await result.json();
   return data.items;
-}
+};
 
 export const _getGenres = async (token: string) => {
   const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {

@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserPreferencesContext } from '../../store/userPreferences/useUserPreferenceContext';
-import { _getToken, _getTracks, _getPlaylistByGenre, _getMyPlaylists, _getMyUserId } from '../../controllers/spotify-api';
-import { ACTIONS } from '../../store/userPreferences/userPreferencesActions';
+import React, { useEffect, useState } from 'react';
+import { _getToken, _getMyPlaylists } from '../../controllers/spotify-api';
 import { IPlaylist } from './playlists.interface';
 
+const userId: string = process.env.REACT_APP_USER_ID || '';
+
 const Playlist: React.FC = () => {
-  const { state } = useContext(UserPreferencesContext);
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
@@ -20,9 +19,9 @@ const Playlist: React.FC = () => {
       // const user = await _getMyUserId(token);
       // const { id } = user;
       // console.log('User Id', id);
-      const myPlaylists = await _getMyPlaylists(token, 'adrian.ipod25');
+      const myPlaylists = await _getMyPlaylists(token, userId);
 
-      (myPlaylists) && setPlaylists(myPlaylists);
+      myPlaylists && setPlaylists(myPlaylists);
     };
 
     getMyPlaylists();
@@ -32,12 +31,14 @@ const Playlist: React.FC = () => {
     <React.Fragment>
       <h2>My Playlists: </h2>
       <select name="playlists">
-        {
-          playlists.map((playlist: IPlaylist) => {
-            const { id, name } = playlist;
-            return <option key={id} value={id}>{name}</option>
-          })
-        }
+        {playlists.map((playlist: IPlaylist) => {
+          const { id, name } = playlist;
+          return (
+            <option key={id} value={id}>
+              {name}
+            </option>
+          );
+        })}
       </select>
     </React.Fragment>
   );
