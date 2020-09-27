@@ -1,10 +1,6 @@
 import React from 'react';
 import Playlist from '../playlist/Playlist';
 
-const Lists: React.FC = () => (
-  <React.Fragment>
-    <Playlist />
-  </React.Fragment>
-);
+const Lists: React.FC = () => (<Playlist />);
 
 export default Lists;
