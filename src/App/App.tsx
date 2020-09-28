@@ -1,12 +1,11 @@
 import React from 'react';
-import SpotifyLogo from '../assets/spotify.png';
 import Lists from '../components/lists/Lists';
 import Layout from '../components/layout/Layout';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useUserPreferenceContext from '../store/userPreferences/useUserPreferenceContext';
 import { darkTheme, lightTheme } from '../themes/themes';
-import ImageContainer from './App.styles';
+import Typography from '@material-ui/core/Typography';
 
 function App() {
   const { theme } = useUserPreferenceContext();
@@ -16,10 +15,11 @@ function App() {
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
       <Layout>
-        <ImageContainer src={SpotifyLogo} className="Spotify-logo" alt="logo" />
-        <div>
-          <Lists />
-        </div>
+        {/* <ImageContainer src={SpotifyLogo} className="Spotify-logo" alt="logo" /> */}
+        <Typography variant="h2" gutterBottom>
+          My top artists on Spotify
+        </Typography>
+        <Lists />
       </Layout>
     </ThemeProvider>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect, createContext } from 'react';
 import { userPreferencesReducer } from './userPreferencesReducer';
-import { setInverseThemeAction, addGenreIdAction } from './userPreferencesActions';
+import { setInverseThemeAction, addGenreIdAction, setAccessTokenAction } from './userPreferencesActions';
 
 const userPreferencesStorageKey = 'USER-PREFERENCES';
 const userId = process.env.REACT_APP_USER_ID;
@@ -12,6 +12,7 @@ type ProviderProps = {
 const initialState = {
   theme: 'light',
   genreId: '',
+  token: '',
 };
 
 function getUserStorageKey() {
@@ -20,17 +21,22 @@ function getUserStorageKey() {
 interface IContext {
   genreId: string;
   theme: string;
+  token: string;
   // eslint-disable-next-line
   addGenreId: (genreId: string) => Promise<void>;
   // eslint-disable-next-line
   setInverseTheme: (theme: string) => void;
+  // eslint-disable-next-line
+  setAccessToken: (token: string) => void;
 }
 
 const UserPreferencesContext = createContext<IContext>({
   genreId: '',
   theme: 'light',
+  token: '',
   addGenreId: async () => await new Promise((resolve) => resolve()),
   setInverseTheme: () => null,
+  setAccessToken: () => null,
 });
 
 export const UserPreferencesProvider = ({ children }: ProviderProps) => {
@@ -43,6 +49,7 @@ export const UserPreferencesProvider = ({ children }: ProviderProps) => {
     ...state,
     addGenreId: addGenreIdAction(dispatch),
     setInverseTheme: setInverseThemeAction(dispatch),
+    setAccessToken: setAccessTokenAction(dispatch),
   };
 
   useEffect(() => {
@@ -51,9 +58,10 @@ export const UserPreferencesProvider = ({ children }: ProviderProps) => {
       JSON.stringify({
         genreId: state.genreId,
         theme: state.theme,
+        token: state.token,
       }),
     );
-  }, [state.theme, state.genreId]);
+  }, [state.theme, state.genreId, state.token]);
 
   return <UserPreferencesContext.Provider value={value}>{children}</UserPreferencesContext.Provider>;
 };

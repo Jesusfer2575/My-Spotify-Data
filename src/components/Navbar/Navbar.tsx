@@ -8,7 +8,8 @@ import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import useUserPreferencesContext from '../../store/userPreferences/useUserPreferenceContext';
 import UserCard from '../user-card/UserCard';
-import useStyles from './Navbar.styles';
+import useStyles, { ImageContainer } from './Navbar.styles';
+import SpotifyLogo from '../../assets/spotify.png';
 
 const Navbar: React.FC = () => {
   const { theme, setInverseTheme } = useUserPreferencesContext();
@@ -26,10 +27,9 @@ const Navbar: React.FC = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+            <ImageContainer src={SpotifyLogo} className="Spotify-logo" alt="logo" />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Spotify-Me
           </Typography>
           <FormControlLabel control={<Switch checked={isSwitchOn} onChange={handleChange} />} label="Dark mode" />
           <UserCard />

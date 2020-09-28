@@ -15,6 +15,11 @@ export function userPreferencesReducer(state: IState, action: IAction) {
         ...state,
         theme: payload,
       };
+    case ACTIONS.SET_ACCESS_TOKEN:
+      return {
+        ...state,
+        token: payload,
+      }
     default:
       throw new Error(`Invalid action "${type}"`);
   }
