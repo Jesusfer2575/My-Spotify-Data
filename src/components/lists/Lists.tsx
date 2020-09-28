@@ -1,6 +1,10 @@
 import React from 'react';
-import Playlist from '../playlist/Playlist';
 
-const Lists: React.FC = () => (<Playlist />);
+const Lists: React.FC = () => (
+  // <Playlist />
+  <div>
+    
+  </div>
+);
 
 export default Lists;

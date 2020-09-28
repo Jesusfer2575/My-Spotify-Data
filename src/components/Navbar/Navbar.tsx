@@ -1,28 +1,14 @@
 import React, { useState } from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import useUserPreferencesContext from '../../store/userPreferences/useUserPreferenceContext';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-    },
-  }),
-);
+import UserCard from '../user-card/UserCard';
+import useStyles from './Navbar.styles';
 
 const Navbar: React.FC = () => {
   const { theme, setInverseTheme } = useUserPreferencesContext();
@@ -46,7 +32,7 @@ const Navbar: React.FC = () => {
             Spotify-Me
           </Typography>
           <FormControlLabel control={<Switch checked={isSwitchOn} onChange={handleChange} />} label="Dark mode" />
-          <Button color="inherit">Login</Button>
+          <UserCard />
         </Toolbar>
       </AppBar>
     </div>

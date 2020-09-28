@@ -1,5 +1,6 @@
 const clientId: string = process.env.REACT_APP_CLIENT_ID || '';
 const clientSecret: string = process.env.REACT_APP_CLIENT_SECRET || '';
+const userId: string = 'adrian.ipod25';
 
 export const _getToken = async () => {
   if (clientId !== '' && clientSecret !== '') {
@@ -16,8 +17,8 @@ export const _getToken = async () => {
   }
 };
 
-export const _getMyUserId = async (token: string) => {
-  const result = await fetch(`https://api.spotify.com/v1/me`, {
+export const _getUserData = async (token: string) => {
+  const result = await fetch(`https://api.spotify.com/v1/users/${userId}`, {
     method: 'GET',
     headers: { Authorization: 'Bearer ' + token },
   });
