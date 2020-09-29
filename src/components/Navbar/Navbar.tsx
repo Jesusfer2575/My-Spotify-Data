@@ -3,13 +3,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import useUserPreferencesContext from '../../store/userPreferences/useUserPreferenceContext';
 import UserCard from '../user-card/UserCard';
 import useStyles, { ImageContainer } from './Navbar.styles';
 import SpotifyLogo from '../../assets/spotify.png';
+import { CssBaseline, Container, Box } from '@material-ui/core';
+
 
 const Navbar: React.FC = () => {
   const { theme, setInverseTheme } = useUserPreferencesContext();

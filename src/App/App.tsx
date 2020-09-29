@@ -16,8 +16,8 @@ function App() {
       <CssBaseline />
       <Layout>
         {/* <ImageContainer src={SpotifyLogo} className="Spotify-logo" alt="logo" /> */}
-        <Typography variant="h2" gutterBottom>
-          My top artists on Spotify
+        <Typography variant="h5" gutterBottom>
+          Top artists on my Spotify
         </Typography>
         <Lists />
       </Layout>

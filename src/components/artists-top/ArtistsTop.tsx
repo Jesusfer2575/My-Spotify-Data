@@ -37,7 +37,7 @@ export default function ArtistsTop() {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image={artist?.images[1].url}
+                  image={artist?.images[0].url}
                   title={artist.name}
                 />
                 <CardContent>

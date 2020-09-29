@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 320,
+    maxWidth: 640,
   },
   media: {
-    height: 320,
+    height: 460,
   },
 });
 
