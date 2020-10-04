@@ -45,10 +45,6 @@ const Authorize: React.FC = () => {
           Login to Spotify
         </a>
       )}
-      {/* {token && (
-        // Spotify Player Will Go Here In the Next Step
-        <p>Logged!</p>
-      )} */}
     </div>
   );
 }

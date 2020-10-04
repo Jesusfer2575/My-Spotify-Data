@@ -1,3 +1,5 @@
+import { IAction } from "./userPreferences.interface";
+
 export const ACTIONS = {
   ADD_GENRE_ID: 'ADD_GENRE_ID',
   SET_INVERSE_THEME: 'SET_INVERSE_THEME',
@@ -5,7 +7,7 @@ export const ACTIONS = {
 };
 
 // eslint-disable-next-line
-export const addGenreIdAction = (dispatch: any) => async (genreId: string) => {
+export const addGenreIdAction = (dispatch: React.Dispatch<IAction>) => async (genreId: string) => {
   dispatch({
     type: ACTIONS.ADD_GENRE_ID,
     payload: genreId,
@@ -13,7 +15,7 @@ export const addGenreIdAction = (dispatch: any) => async (genreId: string) => {
 };
 
 // eslint-disable-next-line
-export const setInverseThemeAction = (dispatch: any) => (theme: string) => {
+export const setInverseThemeAction = (dispatch: React.Dispatch<IAction>) => (theme: string) => {
   dispatch({
     type: ACTIONS.SET_INVERSE_THEME,
     payload: theme,
@@ -21,7 +23,7 @@ export const setInverseThemeAction = (dispatch: any) => (theme: string) => {
 };
 
 // eslint-disable-next-line
-export const setAccessTokenAction = (dispatch: any) => (token: string) => {
+export const setAccessTokenAction = (dispatch: React.Dispatch<IAction>) => (token: string) => {
   dispatch({
     type: ACTIONS.SET_ACCESS_TOKEN,
     payload: token,

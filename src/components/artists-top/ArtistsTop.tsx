@@ -51,8 +51,7 @@ export default function ArtistsTop() {
                     <Typography variant="button" display="block" gutterBottom>
                       Genres:
                     </Typography>
-                    {
-                      artist.genres.map((genre) => {
+                    {artist.genres.map((genre) => {
                         return (
                           <Chip 
                             key={genre} 
@@ -62,8 +61,7 @@ export default function ArtistsTop() {
                             color={getRandom() === 1 ? 'primary':'secondary'}
                           />
                         )
-                      })
-                    }
+                      })}
                   </Typography>
                 </CardContent>
               </CardActionArea>
