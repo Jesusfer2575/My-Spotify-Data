@@ -3,18 +3,16 @@ import Navbar from '../navbar/Navbar';
 import DivContainer from './Layout.styles';
 
 interface LayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   return (
     <React.Fragment>
       <Navbar />
-      <DivContainer>
-        {children}
-      </DivContainer>
+      <DivContainer>{children}</DivContainer>
     </React.Fragment>
   );
-}
+};
 
 export default Layout;

@@ -1,6 +1,6 @@
 const clientId: string = process.env.REACT_APP_CLIENT_ID || '';
 const clientSecret: string = process.env.REACT_APP_CLIENT_SECRET || '';
-const userId: string = 'adrian.ipod25';
+const userId = 'adrian.ipod25';
 
 export const _getToken = async () => {
   // const scopes = 'user-top-read';

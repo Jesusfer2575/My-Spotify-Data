@@ -19,7 +19,7 @@ export function userPreferencesReducer(state: IState, action: IAction) {
       return {
         ...state,
         token: payload,
-      }
+      };
     default:
       throw new Error(`Invalid action "${type}"`);
   }

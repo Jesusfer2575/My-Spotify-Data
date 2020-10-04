@@ -31,9 +31,9 @@ const Playlist: React.FC = () => {
     getMyPlaylists();
   }, []);
 
-  const selectHandleChange = (event: React.ChangeEvent<{value: unknown}>) => {
+  const selectHandleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     setSelectedPlaylist(event.target.value as string);
-  }
+  };
 
   return (
     <React.Fragment>

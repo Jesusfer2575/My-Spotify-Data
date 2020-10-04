@@ -15,7 +15,6 @@ function App() {
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
       <Layout>
-        {/* <ImageContainer src={SpotifyLogo} className="Spotify-logo" alt="logo" /> */}
         <Typography variant="h5" gutterBottom>
           Top artists on my Spotify
         </Typography>

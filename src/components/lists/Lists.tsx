@@ -5,12 +5,7 @@ import Authorize from '../authorize/Authorize';
 import { DivContainer } from './Lists.styles';
 
 const Lists: React.FC = () => (
-  <Grid
-    container
-    direction="row"
-    justify="center"
-    alignItems="center"
-  >
+  <Grid container direction="row" justify="center" alignItems="center">
     <DivContainer>
       <Authorize />
       <ArtistsTop />

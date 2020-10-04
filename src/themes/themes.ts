@@ -19,7 +19,7 @@ export const darkTheme = createMuiTheme({
       main: '#000',
     },
     secondary: {
-      main: '#80DEEA'
-    }
+      main: '#80DEEA',
+    },
   },
 });

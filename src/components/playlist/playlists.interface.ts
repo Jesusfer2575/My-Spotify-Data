@@ -3,12 +3,18 @@ export interface ITracksPlaylist {
   total: number;
 }
 
+interface Image {
+  height: number;
+  url: string;
+  width: number;
+}
+
 export interface IPlaylist {
   collaborative: boolean;
   description: string;
   href: string;
   id: string;
-  images: any[];
+  images: Image[];
   name: string;
   public: boolean;
   snapshot_id: string;

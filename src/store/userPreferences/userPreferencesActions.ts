@@ -1,4 +1,4 @@
-import { IAction } from "./userPreferences.interface";
+import { IAction } from './userPreferences.interface';
 
 export const ACTIONS = {
   ADD_GENRE_ID: 'ADD_GENRE_ID',
@@ -28,4 +28,4 @@ export const setAccessTokenAction = (dispatch: React.Dispatch<IAction>) => (toke
     type: ACTIONS.SET_ACCESS_TOKEN,
     payload: token,
   });
-} 
+};

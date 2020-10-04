@@ -20,7 +20,7 @@ const UserCard: React.FC = () => {
 
   useEffect(() => {
     const getUserInfo = async () => {
-      if(token !== '') {
+      if (token !== '') {
         const userData = await _getUserData(token);
         setUserData(userData as IUserCard);
         // console.log(userData);
@@ -35,9 +35,9 @@ const UserCard: React.FC = () => {
         avatar={<Avatar alt="Adrian Fernandez" src={(userData) ? userData.images[0].url: ''} className={classes.large}/>}
         label={userData?.display_name}
       /> */}
-      <Avatar alt="Adrian Fernandez" src={(userData) ? userData.images[0].url: ''} className={classes.large} />
+      <Avatar alt="Adrian Fernandez" src={userData ? userData.images[0].url : ''} className={classes.large} />
     </div>
   );
-}
+};
 
 export default UserCard;
